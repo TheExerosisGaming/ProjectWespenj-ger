@@ -1,4 +1,4 @@
-package me.exerosis.wespe.engine;
+package me.exerosis.wespe.core;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -16,4 +16,6 @@ public interface Holder<T> extends Predicate<T>, Iterable<T> {
     default Iterator<T> iterator() {
         return getContents().iterator();
     }
+
+    int size();
 }

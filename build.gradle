@@ -11,11 +11,9 @@ repositories {
     }
 }
 
-allprojects {
-
-}
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
+    compileOnly "org.projectlombok:lombok:1.16.10"
 }
 
 project('Engine'){

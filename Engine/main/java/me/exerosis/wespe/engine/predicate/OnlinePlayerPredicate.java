@@ -1,4 +1,4 @@
-package me.exerosis.wespe.engine;
+package me.exerosis.wespe.engine.predicate;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
