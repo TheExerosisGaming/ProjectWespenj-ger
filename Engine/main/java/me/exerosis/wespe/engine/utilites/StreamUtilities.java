@@ -1,6 +1,8 @@
 package me.exerosis.wespe.engine.utilites;
 
 
+import org.apache.commons.io.IOUtils;
+
 import java.io.*;
 import java.net.URL;
 
@@ -31,7 +33,7 @@ public final class StreamUtilities {
         try {
             fileOutputStream = new FileOutputStream(file);
             fileOutputStream = new BufferedOutputStream(fileOutputStream);
-         //   IOUtils.copy(stream, fileOutputStream);
+            IOUtils.copy(stream, fileOutputStream);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -50,7 +52,7 @@ public final class StreamUtilities {
             outputStream = new FileOutputStream(file);
             outputStream = new BufferedOutputStream(outputStream);
 
-          //  IOUtils.copy(inputStream, outputStream);
+            IOUtils.copy(inputStream, outputStream);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

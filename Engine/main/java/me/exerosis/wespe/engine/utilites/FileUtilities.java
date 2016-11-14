@@ -1,5 +1,7 @@
 package me.exerosis.wespe.engine.utilites;
 
+import org.apache.commons.io.IOUtils;
+
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +31,6 @@ public class FileUtilities {
         return contents;
     }
 
-    //TODO FIX
     public static void unzip(File zipFile, File directory) throws IOException {
         if (directory.mkdirs())
             System.err.println("Could not find destination directory, created it.");
@@ -49,7 +50,7 @@ public class FileUtilities {
                 try {
                     outputStream = new FileOutputStream(directory.getPath() + File.separator + entry.getName());
                     outputStream = new BufferedOutputStream(outputStream);
-                 //   IOUtils.copy(inputStream, outputStream);
+                    IOUtils.copy(inputStream, outputStream);
                 } finally {
                     StreamUtilities.closeQuietly(outputStream);
                 }
@@ -79,7 +80,7 @@ public class FileUtilities {
                     inputStream = new FileInputStream(entry.getValue());
                     inputStream = new BufferedInputStream(inputStream);
 
-                 //   IOUtils.copy(inputStream, outputStream);
+                    IOUtils.copy(inputStream, outputStream);
                     ((ZipOutputStream) outputStream).closeEntry();
                 } finally {
                     StreamUtilities.closeQuietly(inputStream);
