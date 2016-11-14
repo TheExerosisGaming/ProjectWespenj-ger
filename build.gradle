@@ -1,0 +1,33 @@
+group 'me.exerosis.wespenjäger'
+version '1.0.0'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+    maven{
+        url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
+    }
+}
+
+allprojects {
+
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+project('Engine'){
+    dependencies {
+        compile 'org.spigotmc:spigot-api:1.10.2-R0.1-SNAPSHOT'
+        compile 'org.bukkit:bukkit:1.10.2-R0.1-SNAPSHOT'
+    }
+}
+
+project('Games'){
+    dependencies {
+        compile 'org.spigotmc:spigot-api:1.10.2-R0.1-SNAPSHOT'
+        compile 'org.bukkit:bukkit:1.10.2-R0.1-SNAPSHOT'
+    }
+}

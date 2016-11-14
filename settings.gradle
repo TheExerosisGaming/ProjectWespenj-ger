@@ -1,0 +1,5 @@
+rootProject.name = 'ProjectWespenjäger'
+include 'Engine'
+include 'Core'
+include 'Games'
+
